@@ -1,0 +1,13 @@
+com\movies\stream\controller\CheckController.class
+com\movies\stream\handler\HttpRequestHandler.class
+com\movies\stream\security\JwtTokenProvider.class
+com\movies\stream\security\UserPrincipal.class
+com\movies\stream\entity\Role.class
+com\movies\stream\config\SecurityConfig.class
+com\movies\stream\controller\StreamController.class
+com\movies\stream\security\JwtAuthenticationFilter.class
+com\movies\stream\security\JwtAuthenticationEntryPoint.class
+com\movies\stream\VideoStreamApplication.class
+com\movies\stream\entity\User.class
+com\movies\stream\config\WebMvcConfig.class
+com\movies\stream\security\JwtAuthentication.class

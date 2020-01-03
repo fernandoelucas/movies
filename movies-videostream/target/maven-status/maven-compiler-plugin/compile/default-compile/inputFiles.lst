@@ -1,0 +1,13 @@
+D:\Users\lucas\git\KnowledgeFactory\springboot-videostream\src\main\java\com\movies\stream\security\JwtAuthentication.java
+D:\Users\lucas\git\KnowledgeFactory\springboot-videostream\src\main\java\com\movies\stream\security\UserPrincipal.java
+D:\Users\lucas\git\KnowledgeFactory\springboot-videostream\src\main\java\com\movies\stream\security\JwtTokenProvider.java
+D:\Users\lucas\git\KnowledgeFactory\springboot-videostream\src\main\java\com\movies\stream\security\JwtAuthenticationFilter.java
+D:\Users\lucas\git\KnowledgeFactory\springboot-videostream\src\main\java\com\movies\stream\entity\User.java
+D:\Users\lucas\git\KnowledgeFactory\springboot-videostream\src\main\java\com\movies\stream\entity\Role.java
+D:\Users\lucas\git\KnowledgeFactory\springboot-videostream\src\main\java\com\movies\stream\config\WebMvcConfig.java
+D:\Users\lucas\git\KnowledgeFactory\springboot-videostream\src\main\java\com\movies\stream\handler\HttpRequestHandler.java
+D:\Users\lucas\git\KnowledgeFactory\springboot-videostream\src\main\java\com\movies\stream\config\SecurityConfig.java
+D:\Users\lucas\git\KnowledgeFactory\springboot-videostream\src\main\java\com\movies\stream\controller\CheckController.java
+D:\Users\lucas\git\KnowledgeFactory\springboot-videostream\src\main\java\com\movies\stream\security\JwtAuthenticationEntryPoint.java
+D:\Users\lucas\git\KnowledgeFactory\springboot-videostream\src\main\java\com\movies\stream\VideoStreamApplication.java
+D:\Users\lucas\git\KnowledgeFactory\springboot-videostream\src\main\java\com\movies\stream\controller\StreamController.java
