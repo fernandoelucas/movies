@@ -1,4 +1,4 @@
-package com.movies.authentication.resource;
+package com.movies.authentication.controller;
 
 import com.movies.authentication.dto.SignUpRequest;
 import com.movies.authentication.entity.User;
@@ -15,12 +15,12 @@ import javax.websocket.server.PathParam;
 
 @RestController
 @RequestMapping(value = "/user")
-public class UserResource {
+public class UserController {
 
     private final UserService userService;
 
     @Autowired
-    public UserResource(UserService userService) {
+    public UserController(UserService userService) {
         this.userService = userService;
     }
 
