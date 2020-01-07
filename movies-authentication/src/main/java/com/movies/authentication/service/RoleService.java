@@ -1,10 +1,10 @@
 package com.movies.authentication.service;
 
-import com.movies.authentication.entity.Role;
-import com.movies.authentication.repository.RoleRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.movies.authentication.entity.Role;
+import com.movies.authentication.repository.RoleRepository;
 
 @Service
 public class RoleService {

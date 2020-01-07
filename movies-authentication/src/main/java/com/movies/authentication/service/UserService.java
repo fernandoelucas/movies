@@ -1,5 +1,20 @@
 package com.movies.authentication.service;
 
+import java.util.Collections;
+
+import javax.persistence.EntityNotFoundException;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.movies.authentication.dto.SignInDTO;
 import com.movies.authentication.dto.SignUpRequest;
 import com.movies.authentication.entity.Role;
 import com.movies.authentication.entity.User;
@@ -9,19 +24,10 @@ import com.movies.authentication.response.JwtAuthenticationResponse;
 import com.movies.authentication.security.JwtTokenProvider;
 import com.movies.authentication.util.password.PasswordUtil;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
-
-import javax.persistence.EntityNotFoundException;
-import java.util.Collections;
-
 @Service
 public class UserService {
+	
+    private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
     private final UserRepository userRepository;
 
@@ -43,6 +49,7 @@ public class UserService {
     }
 
     public User createUser(SignUpRequest userRequest) {
+    	logger.info("creatingUser: "+ userRequest.getUsername());
         if (userRepository.findUserByUsername(userRequest.getUsername()) == null) {
             User newUser = new User();
 
@@ -56,7 +63,10 @@ public class UserService {
         }
     }
 
-    public JwtAuthenticationResponse signInUser(SignUpRequest userRequest) {
+    public JwtAuthenticationResponse signInUser(SignInDTO userRequest) {
+    	
+    	logger.info("signInUser: "+ userRequest.getUsername());
+    	
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         userRequest.getUsername(),
@@ -66,9 +76,11 @@ public class UserService {
         return new JwtAuthenticationResponse(jwt);
     }
 
-    public User removeUser(Long id) {
+    public User removeUser(Long id) {    	
+    	
         User userToRemove = userRepository.getOne(id);
         if (userToRemove != null) {
+        	logger.info("removeUser: "+ userToRemove.getUsername());
             userRepository.delete(userToRemove);
             return userToRemove;
         } else {
